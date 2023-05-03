@@ -1,0 +1,286 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Gotham -Hotel Website</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery.min.js"></script>
+<!--start slider -->
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<!--end slider -->
+<!---strat-date-piker---->
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.js"></script>
+		  <script>
+				  $(function() {
+				    $( "#datepicker,#datepicker1" ).datepicker();
+				  });
+		  </script>
+<!---/End-date-piker---->
+<link type="text/css" rel="stylesheet" href="css/JFGrid.css" />
+<link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
+		<script type="text/javascript" src="js/JFCore.js"></script>
+		<script type="text/javascript" src="js/JFForms.js"></script>
+		<!-- Set here the key for your domain in order to hide the watermark on the web server -->
+		<script type="text/javascript">
+			(function() {
+				JC.init({
+					domainKey: ''
+				});
+				})();
+		</script>
+<!--nav-->
+<script>
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+</script>
+</head>
+<body>
+<!-- start header -->
+<div class="header_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<a href="index.html"><img src="images/logo.png" alt=""></a>
+		</div>
+		<div class="h_right">
+			<!--start menu -->
+			<ul class="menu">
+				<li class="active"><a href="index.html">hotel</a></li> |
+				<li><a href="rooms.html">rooms & suits</a></li> |
+				<li><a href="reservation.html">reservation</a></li> |
+				<li><a href="activities.html">activities</a></li> |
+				<li><a href="contact.html">contact</a></li>
+				<div class="clear"></div>
+			</ul>
+			<!-- start profile_details -->
+					<form class="style-1 drp_dwn">
+						<div class="row">
+							<div class="grid_3 columns">
+								<select class="custom-select" id="select-1">
+									<option selected="selected">Branch</option>
+									<option>Karachi</option>
+									<option>Lahore</option>
+									<option>Rawalpindi</option>
+									<option>Islamabad</option>
+									
+								</select>
+							</div>		
+						</div>		
+					</form>
+		</div>
+		<div class="clear"></div>
+		<div class="top-nav">
+		<nav class="clearfix">
+				<ul>
+				<li class="active"><a href="index.html">hotel</a></li> 
+				<li><a href="rooms.html">rooms & suits</a></li> 
+				<li><a href="reservation.html">reservation</a></li> 
+				<li><a href="activities.html">activities</a></li> 
+				<li><a href="contact.html">contact</a></li>
+				</ul>
+				<a href="#" id="pull">Menu</a>
+			</nav>
+		</div>
+	</div>
+</div>
+</div>
+<!----start-images-slider---->
+		<div class="images-slider">
+			<!-- start slider -->
+			<div class="wrap">
+		    <section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<div class="banner-info">
+								<h4 class="title">Gotham  Hotel <span class="hide">IS YOUR CHOICE</span></h4>
+								<h5 class="title1">WELCOME TO <span class="hide" > ONLINE RESERVATION</span></h5>
+							</div>
+						</li>
+						<li>
+							<div class="banner-info" >
+								
+								<h5 class="title1">Online <span class="hide">Room Reservation</span> </h5>	
+							</div>
+						</li>
+					</ul>
+				</div>
+				</section>
+				<!--FlexSlider-->
+					<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+					<script defer src="js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+			<!--End-slider-script-->
+		    <!--/slider -->
+			</div>
+		</div>
+<!--start main -->
+<div class="main_bg">
+<div class="wrap">
+	<div class="online_reservation">
+	<div class="b_room">
+		<div class="booking_room">
+			<h4>Book a room online</h4>
+			<p></p>
+		</div>
+		<div class="reservation">
+			<ul>
+				<li class="span1_of_1">
+					<h5>type of room:</h5>
+					<!----------start section_room----------->
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Select a type of room</option>
+				            <option value="null">Suite room</option>         
+				            <option value="AX">Single room</option>
+							<option value="AX">Double room</option>
+		        		</select>
+					</div>	
+				</li>
+				<li  class="span1_of_1 left">
+					<h5>check-in-date:</h5>
+					<div class="book_date">
+						<form>
+							<input class="date" id="datepicker" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+						</form>
+
+					</div>					
+				</li>
+				<li  class="span1_of_1 left">
+					<h5>check-out-date:</h5>
+					<div class="book_date">
+						<form>
+							<input class="date" id="datepicker1" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+						</form>
+					</div>		
+				</li>
+				<li class="span1_of_2 left">
+					<h5>Adults:</h5>
+					<!----------start section_room----------->
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">1</option>
+				            <option value="null">2</option>         
+				            <option value="AX">3</option>
+							<option value="AX">4</option>
+		        		</select>
+					</div>					
+					</li>
+				<li class="span1_of_3">
+					<div class="date_btn">
+						<form>
+							<input type="submit" value="book now" />
+						</form>
+					</div>
+					<form class="fo">
+
+					Name:  <input type ="text" width="30%";>  
+					EMAIL: <input type ="text" width="30";> 
+					Cell#: <input type ="text" width="30";>  
+					
+			</form>
+			
+		
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+	<!--start grids_of_3 -->
+	<div class="grids_of_3">
+		<div class="grid1_of_3">
+			<div class="grid1_of_3_img">
+				<a href="single.html">
+					<img src="images/pic2.jpg" alt="" />
+					<span class="next"> </span>
+				</a>
+			</div>
+			<h4><a href="#">Single room<span>PkR-12000</span></a></h4>
+			<p>Single room is for single person ,extra matric for one person provided if needed ,full air conditioned and decoreted with furniture.</p>
+		</div>
+		<div class="grid1_of_3">
+			<div class="grid1_of_3_img">
+				<a href="double.html">
+					<img src="images/pic1.jpg" alt="" />
+					<span class="next"> </span>
+				</a>
+			</div>
+			<h4><a href="#">Double room<span>PkR-18000</span></a></h4>
+			<p>Double room is for couple ,we also decorated room if they are newly married ,with full fleg facilities and air conditioned.</p>
+		</div>
+		<div class="grid1_of_3">
+			<div class="grid1_of_3_img">
+				<a href="suite.html">
+					<img src="images/pic3.jpg" alt="" />
+					<span class="next"> </span>
+				</a>
+			</div>
+			<h4><a href="#">Suite room<span>PkR-21000</span></a></h4>
+			<p>It includes wedding room ,family room with full furnished and air condition with all facilities .</p>
+		</div>
+		<div class="clear"></div>
+	</div>	
+</div>
+</div>		
+<!--start main -->
+<div class="footer_bg">
+<div class="wrap">
+<div class="footer">
+			<div class="copy">
+				<p class="link"><span>@2021 Gotham-Hotel. All rights reserved &nbsp;</span></p>
+			</div>
+			<div class="f_nav">
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="rooms.html">rooms & suits</a></li>
+					<li><a href="reservation.html">reservation</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="soc_icons">
+				<ul>
+					<li><a class="icon1" href="#"></a></li>
+					<li><a class="icon2" href="#"></a></li>
+					<li><a class="icon3" href="#"></a></li>
+					
+					<li><a class="icon5" href="#"></a></li>
+					<div class="clear"></div>
+				</ul>	
+			</div>
+			<div class="clear"></div>
+</div>
+</div>
+</div>		
+</body>
+</html>
